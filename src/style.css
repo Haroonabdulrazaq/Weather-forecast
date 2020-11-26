@@ -5,9 +5,19 @@
   margin: 0;
 }
 
+.search-text {
+  height: 1em;
+}
+
+.main-weather {
+  height: 1em;
+  text-align: center;
+}
+
 .weather-info {
   border-radius: 5px;
   background: rgba(82, 82, 230, 0.521);
+  height: 80vh;
 }
 
 .weather-info .info-wrapper {
@@ -32,10 +42,15 @@
   text-align: center;
   width: 50%;
   height: 100%;
+  padding: 1em;
+}
+
+.weather-info .info-wrapper .info .info + .info {
+  margin: 1em;
 }
 
 .weather-info .info-wrapper .info .info-text {
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
 }
 /*# sourceMappingURL=style.css.map */

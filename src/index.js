@@ -8,6 +8,7 @@ let pressureResult = document.querySelector('.pressure-result')
 let humidityResult = document.querySelector('.humidity-result')
 let precpitationResult = document.querySelector('.precipitation-result')
 let windResult = document.querySelector('.wind-result')
+let mainWeather = document.querySelector('.main-weather')
 
 
 submitButton.addEventListener('click', (e)=>{
@@ -17,31 +18,15 @@ submitButton.addEventListener('click', (e)=>{
     async function weatherInfo(){
       let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`)
       response = await response.json()
-      tempResult.textContent = `${response["main"]["temp"]- 273} C`
+      mainWeather.textContent = `${response.weather[0].description}`
+      tempResult.textContent = `${Math.floor((response.main.temp)-273)}C`;
       pressureResult.textContent = `${response["main"]["pressure"]}mm`
       humidityResult.textContent = `${response["main"]["humidity"]}%`
       precpitationResult.textContent = `${response.weather[0].main}`
       windResult.textContent = response["wind"]["speed"]
+      return response
     }
     weatherInfo().catch(error =>{
       console.error(error)
     })
 });
-
-
-// async function weatherReport() {
-//   let result = {}
-//   result =  await weatherInfo()
-//   console.log(result)
-// }
-
-
-// fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`)
-// .then(response =>{
-//   return response.json()
-// })
-// .then(response =>{
-//   console.log(response)
-// })
-
-//      console.log(response["main"]["temp"])
