@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.weather-info {
+  border-radius: 5px;
+  background: rgba(82, 82, 230, 0.521);
+
+  .info-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .info {
+      text-align: center;
+      width: 50%;
+      height: 100%;
+
+      .info-text {
+        font-size: 2em;
+        color: white;
+      }
+    }
+
+  }
+
+}
+

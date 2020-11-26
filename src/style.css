@@ -1,0 +1,41 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.weather-info {
+  border-radius: 5px;
+  background: rgba(82, 82, 230, 0.521);
+}
+
+.weather-info .info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather-info .info-wrapper .info {
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.weather-info .info-wrapper .info .info-text {
+  font-size: 2em;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
