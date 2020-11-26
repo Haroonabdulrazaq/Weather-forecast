@@ -1,0 +1,24 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haroonabdulrazaq/Weather-forecast.git"
+  },
+  "author": "Haroon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haroonabdulrazaq/Weather-forecast/issues"
+  },
+  "homepage": "https://github.com/Haroonabdulrazaq/Weather-forecast#readme",
+  "devDependencies": {
+    "webpack": "^5.7.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
