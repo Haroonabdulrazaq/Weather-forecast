@@ -1,8 +1,8 @@
-import weatherInfo from './weather';
+import weatherModule from './weather';
 
 const submitButton = document.querySelector('.submit-btn');
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  weatherInfo();
+  weatherModule.weatherInfo();
 });
