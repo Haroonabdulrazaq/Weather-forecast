@@ -1,4 +1,20 @@
 const weatherModule = (() => {
+  const Converter = (tempText, tempR, tempValue) => {
+    tempText.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (tempText.textContent === 'Celsius') {
+        tempText.textContent = 'Fahrenheit';
+        tempR.textContent = `${tempValue}°C`;
+      } else if (tempText.textContent === 'Fahrenheit') {
+        tempText.textContent = 'Celsius';
+        tempR.textContent = `${((tempValue * 9) / 5) + 32}F`;
+      } else {
+        tempText.textContent = 'Fahrenheit';
+        tempR.textContent = `${tempValue}°C`;
+      }
+    });
+  };
+
   const weatherInfo = async () => {
     const pressureResult = document.querySelector('.pressure-result');
     const humidityResult = document.querySelector('.humidity-result');
@@ -34,21 +50,7 @@ const weatherModule = (() => {
         windResult.textContent = `${response.wind.speed}m/s`;
         timeResult.textContent = response.timezone < 0 ? `UTC${response.timezone / 3600}` : `UTC+${response.timezone / 3600}`;
 
-
-        tempUnit.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (tempUnit.textContent === 'Celsius') {
-            tempUnit.textContent = 'Fahrenheit';
-            tempResult.textContent = `${temp}°C`;
-          } else if (tempUnit.textContent === 'Fahrenheit') {
-            tempUnit.textContent = 'Celsius';
-            tempResult.textContent = `${((temp * 9) / 5) + 32}F`;
-          } else {
-            tempUnit.textContent = 'Fahrenheit';
-            tempResult.textContent = `${temp}°C`;
-          }
-        });
-
+        Converter(tempUnit, tempResult, temp);
         return response;
       }
       searchText.textContent = 'Invalid Input';
