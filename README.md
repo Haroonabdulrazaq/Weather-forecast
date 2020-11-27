@@ -19,7 +19,7 @@
 - Bulma.io
 
 ## Live Demo
-
+![Weather-forecast]("https://raw.githack.com/Haroonabdulrazaq/Weather-forecast/feature/dist/index.html")
 
 ## Prerequisites
 - You need to have node already installed with npm
