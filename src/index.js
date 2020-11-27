@@ -7,25 +7,51 @@ let humidityResult = document.querySelector('.humidity-result')
 let precpitationResult = document.querySelector('.precipitation-result')
 let windResult = document.querySelector('.wind-result')
 let mainWeather = document.querySelector('.main-weather')
-
-
+let tempUnit = document.querySelector('.temp-unit')
+let temp = 0
 submitButton.addEventListener('click', (e)=>{
-  let inputValue = input.value
-  searchText.textContent = inputValue
-    e.preventDefault();
-    async function weatherInfo(){
-      let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`)
-      response = await response.json()
-      mainWeather.textContent = `${response.weather[0].description}`
-      tempResult.textContent = `${Math.floor((response.main.temp)-273)}C`;
-      pressureResult.textContent = `${response["main"]["pressure"]}mm`
-      humidityResult.textContent = `${response["main"]["humidity"]}%`
-      precpitationResult.textContent = `${response.weather[0].main}`
-      windResult.textContent = response["wind"]["speed"]
-      return response
-    }
-    weatherInfo().catch(error =>{
-      console.error(error)
-    })
+  e.preventDefault();
+  async function weatherInfo(){
+    let inputValue = input.value
+    searchText.textContent = inputValue.toUpperCase()
+
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`)
+    response = await response.json()
+    mainWeather.textContent = `${response.weather[0].description}`
+    temp = Math.floor((response.main.temp)-273)
+    tempResult.textContent = `${temp}°C`;
+    pressureResult.textContent = `${response["main"]["pressure"]}mm`
+    humidityResult.textContent = `${response["main"]["humidity"]}%`
+    precpitationResult.textContent = `${response.weather[0].main}`
+    windResult.textContent = response["wind"]["speed"]
+    return response
+  }
+  weatherInfo().catch(error =>{
+    console.error(error)
+  })
 });
 
+const convertToFahrenheit =(fahrenheit)=>{
+  return fahrenheit = (temperature * 9/5) + 32;
+ }
+
+//Function converting Celsisus to Fahrenheit
+const convertToCelsius = (celsius)=>{
+  return celsius = (convertToFahrenheit() - 32) * 5/9;
+}
+
+  tempUnit.addEventListener('click',(e)=>{
+    e.preventDefault();
+      if (tempUnit.textContent == 'Celsius'){
+        tempUnit.textContent = 'Fahrenheit'
+        tempResult.textContent= `${temp}°C`
+      }
+      else if (tempUnit.textContent == 'Fahrenheit'){
+        tempUnit.textContent = 'Celsius'
+        tempResult.textContent = `${(temp * 9/5) + 32}F`
+      }
+      else{
+        tempUnit.textContent = 'Fahrenheit'
+        tempResult.textContent= `${temp}°C`
+      }
+  })
