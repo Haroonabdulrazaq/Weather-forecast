@@ -8,12 +8,14 @@ let precpitationResult = document.querySelector('.precipitation-result')
 let windResult = document.querySelector('.wind-result')
 let timeResult = document.querySelector('.time-result')
 let mainWeather = document.querySelector('.main-weather')
+let loader = document.querySelector('.loader')
 
 let tempUnit = document.querySelector('.temp-unit')
 let temp = 0
 
 
 submitButton.addEventListener('click', (e)=>{
+  loader.classList.remove('hide')
   e.preventDefault();
   async function weatherInfo(){
     let inputValue = input.value
@@ -21,6 +23,7 @@ submitButton.addEventListener('click', (e)=>{
 
     let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`)
     response = await response.json()
+    loader.classList.add('hide')
     mainWeather.textContent = `${response.weather[0].description}`
     temp = Math.floor((response.main.temp)-273)
     tempResult.textContent = `${temp}°C`;
