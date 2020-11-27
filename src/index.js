@@ -40,6 +40,7 @@ submitButton.addEventListener('click', (e)=>{
     }
   }
   weatherInfo().catch(error =>{
+    searchText.textContent = "City not found"
     console.error(error)
   })
 });
