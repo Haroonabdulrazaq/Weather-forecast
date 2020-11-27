@@ -1,4 +1,6 @@
 const weatherModule = (() => {
+
+  let bg = document.querySelector('.bg-info');
   const weatherInfo = async () => {
     const pressureResult = document.querySelector('.pressure-result');
     const humidityResult = document.querySelector('.humidity-result');
@@ -10,7 +12,8 @@ const weatherModule = (() => {
     const input = document.querySelector('.city-input');
     const searchText = document.querySelector('.search-text');
     const tempResult = document.querySelector('.temp-result');
-    const tempUnit = document.querySelector('.temp-unit');
+    const tempUnit = document.querySelector('.temp-unit'); 
+ 
     let temp = 0;
     const inputValue = input.value;
 
@@ -33,7 +36,8 @@ const weatherModule = (() => {
         precpitationResult.textContent = `${response.weather[0].main}`;
         windResult.textContent = `${response.wind.speed}m/s`;
         timeResult.textContent = response.timezone < 0 ? `UTC${response.timezone / 3600}` : `UTC+${response.timezone / 3600}`;
-
+        let search = response.weather[0].main
+        giffy(search)
 
         tempUnit.addEventListener('click', (e) => {
           e.preventDefault();
@@ -58,6 +62,13 @@ const weatherModule = (() => {
     return {};
   };
 
+  const giffy = async (searchTerm) => { 
+    let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=EaXnBGWSsM2gJBfbBOxFgQGkZOTjVoEp&limit=1&q=${searchTerm}`)
+    response = await response.json()
+    bg.style.backgroundImage = `url(${response.data[0].images.original.url})`;
+  }
+
+ 
   return { weatherInfo };
 })();
 
