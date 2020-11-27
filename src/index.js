@@ -6,9 +6,13 @@ let pressureResult = document.querySelector('.pressure-result')
 let humidityResult = document.querySelector('.humidity-result')
 let precpitationResult = document.querySelector('.precipitation-result')
 let windResult = document.querySelector('.wind-result')
+let timeResult = document.querySelector('.time-result')
 let mainWeather = document.querySelector('.main-weather')
+
 let tempUnit = document.querySelector('.temp-unit')
 let temp = 0
+
+
 submitButton.addEventListener('click', (e)=>{
   e.preventDefault();
   async function weatherInfo(){
@@ -23,7 +27,8 @@ submitButton.addEventListener('click', (e)=>{
     pressureResult.textContent = `${response["main"]["pressure"]}mm`
     humidityResult.textContent = `${response["main"]["humidity"]}%`
     precpitationResult.textContent = `${response.weather[0].main}`
-    windResult.textContent = response["wind"]["speed"]
+    windResult.textContent = `${response["wind"]["speed"]}m/s`
+    timeResult.textContent = response["timezone"] < 0 ? `UTC${response["timezone"]/3600}` : `UTC+${response["timezone"]/3600}`
     return response
   }
   weatherInfo().catch(error =>{
