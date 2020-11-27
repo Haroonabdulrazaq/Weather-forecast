@@ -2,7 +2,7 @@
  
  
 
-![screenshot](./src/assets/img/screenshot.png)
+![screenshot](./src/Screenshot.png)
 
 - Set up a blank HTML document with the appropriate links to your JavaScript and CSS files.
 - Write the functions that hit the API. Wrote a functions that can take a location and return the weather data for that location. 
