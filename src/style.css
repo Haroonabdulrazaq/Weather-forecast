@@ -18,6 +18,7 @@
   border-radius: 5px;
   background: rgba(82, 82, 230, 0.521);
   height: 80vh;
+  color: white;
 }
 
 .weather-info .info-wrapper {
@@ -45,12 +46,7 @@
   padding: 1em;
 }
 
-.weather-info .info-wrapper .info .info + .info {
-  margin: 1em;
-}
-
 .weather-info .info-wrapper .info .info-text {
   font-size: 1.5em;
-  color: white;
 }
 /*# sourceMappingURL=style.css.map */

@@ -17,6 +17,7 @@
   border-radius: 5px;
   background: rgba(82, 82, 230, 0.521);
   height: 80vh;
+  color: white;
 
   .info-wrapper {
     display: flex;
@@ -29,14 +30,8 @@
       width: 50%;
       height: 100%;
       padding: 1em;
-
-      .info + .info {
-        margin: 1em;
-      }
-
       .info-text {
         font-size: 1.5em;
-        color: white;
       }
     }
 

@@ -1,5 +1,3 @@
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-
 let input = document.querySelector('.city-input')
 let submitButton = document.querySelector('.submit-btn')
 let searchText = document.querySelector('.search-text')
@@ -30,3 +28,4 @@ submitButton.addEventListener('click', (e)=>{
       console.error(error)
     })
 });
+
