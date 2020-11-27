@@ -12,10 +12,9 @@
   display: none;
 }
 
-
 .main-weather {
   height: 1em;
- text-align: center;
+  text-align: center;
 }
 
 .weather-info {
@@ -30,18 +29,18 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
     .info {
       text-align: center;
       width: 50%;
       height: 100%;
       padding: 1em;
+
       .info-text {
         font-size: 1.5em;
       }
     }
-
   }
-
 }
 
 .loader {

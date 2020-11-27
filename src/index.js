@@ -1,10 +1,8 @@
-import weatherInfo from './weather'
-let submitButton = document.querySelector('.submit-btn')
+import weatherInfo from './weather';
 
-let tempUnit = document.querySelector('.temp-unit')
+const submitButton = document.querySelector('.submit-btn');
 
-
-submitButton.addEventListener('click', (e)=>{
+submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  weatherInfo()
+  weatherInfo();
 });
