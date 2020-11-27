@@ -36,6 +36,7 @@ To get a local copy up and running follow these simple example steps.
     - <code>`cd Weather-forecast` </code>
 3. Open in Editor of choice
 
+Note: API key is left in the Code for review purpose
 
 ## Webpack Setup
 
