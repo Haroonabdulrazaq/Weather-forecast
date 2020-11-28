@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../src/style.css">
+  <title>weather-forecast</title>
+</head>
+<body class="bg-info">
+  <div class="loader hide"></div>
+<div class="section ">
+  <div class="columns is-centered is-mobile">
+    <div class="column is-4">
+      <form action="" class="level">
+        <input type="text" placeholder="Search Location" class="city-input input mr-4">
+        <input type="submit" value="Search" class="submit-btn button is-info">
+      </form>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    
+    <div class="column is-8 weather-info has-background-info">
+      <h2 class="search-text has-text-centered has-text-white is-4"></h2>
+      <p class="main-weather has-text-centered m-4"></p>   <!--  Clear || Not Clear  -->
+      <div class="info-wrapper">
+        <div class="info temp-info">
+          <div class="info-text">Temperature</div>
+          <button class="temp-unit">Fahrenheit</button>
+          <div class="result temp-result"> </div>
+        </div>
+        <div class="info pressure-info">
+          <div class="info-text">Pressure</div>
+          <div class="result pressure-result">
+            
+          </div>
+        </div>
+        <div class="info humidity-info">
+          <div class="info-text"> Humidity</div>
+          <div class="result humidity-result">
+
+          </div>
+        </div>
+        <div class="info precpitation-info">
+          <div class="info-text"> Precipitation</div>
+          <div class="result precipitation-result">
+
+          </div>
+        </div>
+        <div class="info wind-info">
+          <div class="info-text"> Wind Speed</div>
+          <div class="result wind-result">
+
+          </div>
+        </div>
+        <div class="info time-info">
+          <div class="info-text">Time Zone</div>
+          <div class="result time-result">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
