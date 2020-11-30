@@ -13,6 +13,6 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new Dotenv()
-  ]
+    new Dotenv(),
+  ],
 };

@@ -14,7 +14,7 @@ const weatherModule = (() => {
       }
     });
   };
-  console.log()
+
   const weatherInfo = async () => {
     const pressureResult = document.querySelector('.pressure-result');
     const humidityResult = document.querySelector('.humidity-result');
