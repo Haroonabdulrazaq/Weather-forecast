@@ -6,3 +6,4 @@ submitButton.addEventListener('click', (e) => {
   e.preventDefault();
   weatherModule.weatherInfo();
 });
+

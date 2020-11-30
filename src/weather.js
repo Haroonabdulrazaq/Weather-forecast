@@ -14,7 +14,7 @@ const weatherModule = (() => {
       }
     });
   };
-
+  console.log()
   const weatherInfo = async () => {
     const pressureResult = document.querySelector('.pressure-result');
     const humidityResult = document.querySelector('.humidity-result');
@@ -35,7 +35,7 @@ const weatherModule = (() => {
       if (inputValue.match(regexp)) {
         loader.classList.remove('hide');
 
-        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=f1626be87a0ae483be20b659210c16a3`);
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${process.env.API_KEY}`);
         response = await response.json();
 
         loader.classList.add('hide');
