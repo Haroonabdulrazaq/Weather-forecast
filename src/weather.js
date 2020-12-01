@@ -64,6 +64,14 @@ const weatherModule = (() => {
       searchText.textContent = 'Invalid Input';
     } catch (error) {
       searchText.textContent = 'Location not found';
+
+      mainWeather.textContent = '';
+      tempResult.textContent = '';
+      pressureResult.textContent = '';
+      humidityResult.textContent = '';
+      precpitationResult.textContent = '';
+      windResult.textContent = '';
+      timeResult.textContent = '';
     }
     return {};
   };
